@@ -12,8 +12,10 @@ sudo tar -xvf apache-tomcat-6.0.41.tar.gz
 cd apache-tomcat-6.0.41/webapps/
 sudo cp /home/zhiwuxie/development/SiteStory/sitestory-webapp/target/sitestory.war .
 cd ..
+sudo bin/shutdown.sh
 sudo bin/startup.sh
-#Change directory where archives will be stored
+#Changing archive directory 
 sudo sed -i "s/backup/$ARCHIVE_DIR/g" /home/zhiwuxie/development/apache-tomcat-6.0.41/webapps/sitestory/WEB-INF/classes/ta.properties
+#Restarting Tomcat
 sudo bin/shutdown.sh
 sudo bin/startup.sh
